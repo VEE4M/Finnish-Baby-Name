@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Finnish Baby Name</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_boy_names">Poikien Nimet</string>
+    <string name="title_girl_names">Tyttöjen Nimet</string>
+    <string name="menu_item_all_names">Kaikki Nimet</string>
+    <string name="menu_item_favourites">Suosikit</string>
+    <string name="menu_item_blacklist">Poistetut</string>
+    <string name="menu_item_name_generator">Nimikone</string>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/nameListFragment">
+    <fragment
+        android:id="@+id/nameListFragment"
+        android:name="com.gmail.appverstas.finnishbabyname.data.fragments.NameListFragment"
+        android:label="All Names"
+        tools:layout="@layout/fragment_name_list">
+        <action
+            android:id="@+id/action_nameListFragment_to_nameGeneratorFragment"
+            app:destination="@id/nameGeneratorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nameGeneratorFragment"
+        android:name="com.gmail.appverstas.finnishbabyname.data.fragments.NameGeneratorFragment"
+        android:label="fragment_name_generator"
+        tools:layout="@layout/fragment_name_generator" >
+        <action
+            android:id="@+id/action_nameGeneratorFragment_to_nameListFragment"
+            app:destination="@id/nameListFragment" />
+    </fragment>
+</navigation>
