@@ -7,19 +7,31 @@
     <fragment
         android:id="@+id/nameListFragment"
         android:name="com.gmail.appverstas.finnishbabyname.data.fragments.NameListFragment"
-        android:label="All Names"
+        android:label="@string/label_all_names"
         tools:layout="@layout/fragment_name_list">
         <action
             android:id="@+id/action_nameListFragment_to_nameGeneratorFragment"
             app:destination="@id/nameGeneratorFragment" />
+        <action
+            android:id="@+id/action_nameListFragment_to_favouriteNamesFragment"
+            app:destination="@id/favouriteNamesFragment" />
     </fragment>
     <fragment
         android:id="@+id/nameGeneratorFragment"
         android:name="com.gmail.appverstas.finnishbabyname.data.fragments.NameGeneratorFragment"
-        android:label="fragment_name_generator"
+        android:label="@string/label_name_generator"
         tools:layout="@layout/fragment_name_generator" >
         <action
             android:id="@+id/action_nameGeneratorFragment_to_nameListFragment"
+            app:destination="@id/nameListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favouriteNamesFragment"
+        android:name="com.gmail.appverstas.finnishbabyname.data.fragments.FavouriteNamesFragment"
+        android:label="@string/label_favourite_names"
+        tools:layout="@layout/fragment_favourite_names" >
+        <action
+            android:id="@+id/action_favouriteNamesFragment_to_nameListFragment"
             app:destination="@id/nameListFragment" />
     </fragment>
 </navigation>

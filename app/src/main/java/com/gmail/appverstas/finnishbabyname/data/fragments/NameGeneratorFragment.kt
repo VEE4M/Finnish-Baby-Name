@@ -44,8 +44,8 @@ class NameGeneratorFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_name_generator, container, false)
 
-        val maleButton = view.findViewById<ImageView>(R.id.maleImage)
-        val femaleButton = view.findViewById<ImageView>(R.id.femaleImage)
+        val maleButton = view.findViewById<ImageView>(R.id.generatorMaleImage)
+        val femaleButton = view.findViewById<ImageView>(R.id.generatorFemaleImage)
         val generateNextButton = view.findViewById<Button>(R.id.btn_generate_next)
 
         val firstNameStartsConsonantRadio = view.findViewById<RadioButton>(R.id.firstNameStartsConsonantRadioButton)
@@ -75,7 +75,7 @@ class NameGeneratorFragment : Fragment() {
         val firstNameShowSetupButton = view.findViewById<LinearLayout>(R.id.firstNameSetupTitleLayout)
         val secondNameSetup = view.findViewById<ConstraintLayout>(R.id.secondNameSetupLayout)
         val secondNameShowSetupButton = view.findViewById<LinearLayout>(R.id.secondNameSetupTitleLayout)
-        val thirdNameSetup = view.findViewById<LinearLayout>(R.id.thirdNameSetupLayout)
+        val thirdNameSetup = view.findViewById<ConstraintLayout>(R.id.thirdNameSetupLayout)
         val thirdNameShowSetupButton = view.findViewById<LinearLayout>(R.id.thirdNameSetupTitleLayout)
         val enableThirdNameCheckbox = view.findViewById<CheckBox>(R.id.enableThirdNameCheckbox)
 
@@ -140,6 +140,8 @@ class NameGeneratorFragment : Fragment() {
                 firstNameSetup.visibility = View.GONE
             }else{
                 firstNameSetup.visibility = View.VISIBLE
+                secondNameSetup.visibility = View.GONE
+                thirdNameSetup.visibility = View.GONE
             }
         }
 
@@ -147,7 +149,9 @@ class NameGeneratorFragment : Fragment() {
             if(secondNameSetup.isVisible){
                 secondNameSetup.visibility = View.GONE
             }else{
+                firstNameSetup.visibility = View.GONE
                 secondNameSetup.visibility = View.VISIBLE
+                thirdNameSetup.visibility = View.GONE
             }
         }
 
@@ -155,6 +159,8 @@ class NameGeneratorFragment : Fragment() {
             if(thirdNameSetup.isVisible){
                 thirdNameSetup.visibility = View.GONE
             }else{
+                firstNameSetup.visibility = View.GONE
+                secondNameSetup.visibility = View.GONE
                 thirdNameSetup.visibility = View.VISIBLE
             }
         }

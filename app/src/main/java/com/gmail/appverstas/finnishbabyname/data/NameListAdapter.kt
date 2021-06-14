@@ -20,7 +20,6 @@ class NameListAdapter(var context: Context): RecyclerView.Adapter<NameListAdapte
     var nameList = emptyList<Name>()
     var nameListAll = emptyList<Name>()
     var currentGender = "boy"
-    var showOnlyFavourites = false
     var showOnlyBlacklist = false
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -36,9 +35,9 @@ class NameListAdapter(var context: Context): RecyclerView.Adapter<NameListAdapte
         nameText.setText(nameCount.toString() + ". " + nameList[position].name)
 
         if (nameList[position].isFavourite.equals("true")){
-            favouriteButton.setImageResource(R.drawable.ic_star_on)
+            favouriteButton.setImageResource(R.drawable.ic_heart_filled)
         }else{
-            favouriteButton.setImageResource(R.drawable.ic_star_off)
+            favouriteButton.setImageResource(R.drawable.ic_heart_border)
         }
 
         favouriteButton.setOnClickListener {
@@ -64,9 +63,7 @@ class NameListAdapter(var context: Context): RecyclerView.Adapter<NameListAdapte
     }
 
     fun makeList(){
-        if(showOnlyFavourites == true){
-            nameList = nameListAll.filter { name -> (name.gender.equals(currentGender)) && (name.isFavourite.equals("true"))}
-        }else if (showOnlyBlacklist == true){
+        if (showOnlyBlacklist == true){
             nameList = nameListAll.filter { name -> (name.gender.equals(currentGender)) && (name.isBlacklisted.equals("true"))}
         }else{
             nameList = nameListAll.filter { name -> name.gender.equals(currentGender) && (name.isBlacklisted.equals("false"))}
@@ -74,9 +71,6 @@ class NameListAdapter(var context: Context): RecyclerView.Adapter<NameListAdapte
         notifyDataSetChanged()
     }
 
-    fun setOnlyFavourites(b: Boolean){
-        showOnlyFavourites = b
-    }
 
     fun setOnlyBlacklist(b: Boolean){
         showOnlyBlacklist = b

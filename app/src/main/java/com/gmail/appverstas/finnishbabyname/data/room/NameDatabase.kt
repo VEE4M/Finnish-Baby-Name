@@ -37,6 +37,21 @@ abstract class NameDatabase: RoomDatabase() {
             }
 
        }
+
+        fun addToDatabase(context: Context, fileName: String, gender: String, nameViewModel: NameViewModel){
+            val names = context?.assets?.open(fileName)?.reader()?.readLines()
+            if (names != null) {
+                for (name in names) {
+                    val newName = Name(
+                        0,
+                        name,
+                        gender,
+                        "false",
+                        "false")
+                    nameViewModel.insertName(newName)
+                }
+            }
+        }
     }
 
 }

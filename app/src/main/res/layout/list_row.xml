@@ -28,7 +28,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_star_off" />
+        app:srcCompat="@drawable/ic_heart_border" />
 
     <ImageView
         android:id="@+id/btn_blacklist"

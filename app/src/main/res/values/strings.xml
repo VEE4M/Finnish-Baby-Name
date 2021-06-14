@@ -7,4 +7,8 @@
     <string name="menu_item_favourites">Suosikit</string>
     <string name="menu_item_blacklist">Poistetut</string>
     <string name="menu_item_name_generator">Nimikone</string>
+    <string name="checkbox_enable">Käytössä</string>
+    <string name="label_name_generator">Nimikone</string>
+    <string name="label_favourite_names">Suosikit</string>
+    <string name="label_all_names">Kaikki Nimet</string>
 </resources>

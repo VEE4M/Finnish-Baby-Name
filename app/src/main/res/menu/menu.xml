@@ -1,23 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
 
     <item
         android:id="@+id/menu_all_names"
-        android:title="@string/menu_item_all_names"
-        android:visible="false" />
-
-    <item
-        android:id="@+id/menu_favourites"
-        android:title="@string/menu_item_favourites" />
+        android:visible="false"
+        android:title="@string/menu_item_all_names" />
 
     <item
         android:id="@+id/menu_blacklist"
         android:title="@string/menu_item_blacklist" />
-
-    <item
-        android:id="@+id/menu_name_generator"
-        android:title="@string/menu_item_name_generator" />
-
 
 </menu>
